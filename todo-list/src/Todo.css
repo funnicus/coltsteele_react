@@ -1,0 +1,23 @@
+.Todo{
+    background-color:  #666666;
+    display: inline-grid;
+    height: 45px;
+    grid-template-columns: 250px 70px 70px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+p {
+    margin-left: 20px;
+}
+
+.Todo button {
+    background-color: #666666;
+    border: none;
+    color: white;
+}
+
+button:hover {
+    background-color: #424040;
+    cursor: pointer;
+}

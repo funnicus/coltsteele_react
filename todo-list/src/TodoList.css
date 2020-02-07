@@ -1,0 +1,8 @@
+.TodoList{
+    font-family: sans-serif;
+    background-color: #404040;
+    width: 400px;
+    margin: 40px;
+    padding: 10px;
+    box-shadow: 20px 16px 5px 0px rgba(0,0,0,0.55);
+}
