@@ -7,8 +7,37 @@
     overflow: hidden;
 }
 
+.TodoForm{
+    background-color:  #666666;
+    display: inline-grid;
+    height: 45px;
+    grid-template-columns: 250px 70px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
 p {
     margin-left: 20px;
+    position: relative;
+    width: min-content;
+    transition: opacity 0.4s linear;
+}
+
+.completed {
+    color: rgb(235, 231, 231);
+    opacity: 0.6;
+}
+
+.completed:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: .0.5rem;
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: #fff;
+    animation: strikeitem 0.5s ease-out 0s forwards;
 }
 
 .Todo button {
@@ -17,7 +46,19 @@ p {
     color: white;
 }
 
+.TodoForm button {
+    background-color: #666666;
+    border: none;
+    color: white;
+}
+
 button:hover {
     background-color: #424040;
     cursor: pointer;
+}
+
+@keyframes strikeitem {
+    to {
+        width: calc(95% + 1rem);
+    }
 }

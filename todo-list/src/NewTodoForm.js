@@ -21,7 +21,7 @@ class NewTodoForm extends Component{
 
     handleSubmit(evt){
         evt.preventDefault();
-        const newTodo = {...this.state, id: uuid()};
+        const newTodo = {...this.state, id: uuid(), completed: false};
         this.props.addTodo(newTodo);
         let curState = {...this.state};
         curState = {addTodoField: ""};
@@ -35,7 +35,7 @@ class NewTodoForm extends Component{
         return(
             <div className = "newTodoForm">
                 <h2>Add Todo</h2>
-                <form>
+                <form onSubmit={this.state.addTodoField === "" ? e => {e.preventDefault()} : this.handleSubmit}>
                     <input
                     type="text"
                     name="addTodoField"
@@ -43,7 +43,7 @@ class NewTodoForm extends Component{
                     placeholder="add todo..."
                     onChange={this.handleChange}
                     />
-                    <button onClick={this.state.addTodoField === "" ? e => {e.preventDefault()} : this.handleSubmit}>{plus}</button>
+                    <button onClick>{plus}</button>
                 </form>
             </div>
         );
